@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            text-align: center;
+        }
+
+        .wrap div {
+            width: 400px;
+            height: 300px;
+            background: pink;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //需求：在页面上，按下键盘上的键位，然后获取他的Unicode编码。进行判断；
+
+            $(document).on("keyup", function (event) {
+                //传递过去数值，设置背景色
+                setColor(event.keyCode);
+            });
+
+
+
+            function setColor(num){
+                $("#keyCodeSpan").text(num);
+                switch (num){
+                    case 80:
+                        $("#bgChange").css("background","purple");
+                        break;
+                    case 82:
+                        $("#bgChange").css("background","red");
+                        break;
+                    case 89:
+                        $("#bgChange").css("background","yellow");
+                        break;
+                    case 71:
+                        $("#bgChange").css("background","lightgreen");
+                        break;
+                    case 83:
+                        $("#bgChange").css("background","skyblue");
+                        break;
+                    case 66:
+                        $("#bgChange").css("background","blue");
+                        break;
+                    case 79:
+                        $("#bgChange").css("background","orange");
+                        break;
+                    default :
+                        $("#bgChange").css("background","pink");
+                        $("#keyCodeSpan").text("无此颜色");
+                }
+
+
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <div class="wrap">
+        <h1>按键改变颜色</h1>
+        <!--改变这个盒子的背景-->
+        <div id="bgChange">
+            keyCode为：
+            <!--往这里输入内容-->
+            <span id="keyCodeSpan"></span>
+        </div>
+    </div>
+
+
+</body>
+</html>

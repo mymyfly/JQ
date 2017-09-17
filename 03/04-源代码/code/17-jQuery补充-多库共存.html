@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-1.8.2.min.js"></script>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(function () {
+            //打印版本
+//            console.log($.fn.jquery);
+//            console.log(jQuery.fn.jquery);
+
+            //让一个符号放弃使用权；
+//            $.noConflict();//让最高版本的jQuery放弃对$的使用
+//            console.log($.fn.jquery);//1.8.2
+//            console.log(jQuery.fn.jquery);//1.11.1
+
+
+            var MrLv = $.noConflict(true);
+            //让最高版本的jQuery放弃对$和jQuery的使用，改用MrLv;
+            console.log($.fn.jquery);//1.8.2
+            console.log(jQuery.fn.jquery);//1.8.2
+            console.log(MrLv.fn.jquery);//1.11.1
+            console.log(MrLv("div"));//获取div；
+
+
+        })
+    </script>
+</head>
+<body>
+    <div>111</div>
+</body>
+</html>

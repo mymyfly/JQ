@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-moz-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        .wrap {
+            width: 1000px;
+            text-align: center;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        .word {
+            font-weight: 700;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink .7s infinite;
+            -moz-animation: blink .7s infinite;
+            animation: blink .7s infinite;
+            display: none;
+        }
+
+        .saySection {
+            margin-top: 50px;
+        }
+
+        .saySection input {
+            font-size: 30px;
+        }
+
+        .saySection .txtSay {
+            padding-left: 10px;
+        }
+
+        .saySection .btnSay {
+            display: inline-block;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //需求1：页面加载的时候，通过定时器往word盒子里面添加内容；
+            //需求2：点击按钮，通过定时器往word盒子里面添加内容；
+
+
+            //需求1：页面加载的时候，通过定时器往word盒子里面添加内容；
+            //步骤：
+            //1.设置一个字符串；定义一个索引值；显示插入条光标；
+            //2.利用定时器，每次往字符串中添加一个内容，索引值自增，设置给word盒子；
+            //3.判断没有内容了就清除定时器；
+            //4.隐藏插入条光标；
+            var timer = null;
+            setTxt("红鲤鱼与绿鲤鱼与驴");
+
+            //需求2：点击按钮，通过定时器往word盒子里面添加内容；
+                //更换内容，不更换逻辑，所以进行封装；
+            $("#btnSay").click(function () {
+                //内容设置为input里面的内容；
+                setTxt($("#inValue").val());
+            });
+
+
+
+
+
+
+
+            //封装一个方法；内容是参数；
+            function setTxt(txt){
+                //1.设置一个字符串；定义一个索引值；显示插入条光标；
+                var str = txt;
+//            str = str.split("");
+                //bug:内容为空，不能输入
+                if(txt.trim() === ""){
+                    return;
+                }
+
+                var newStr = "";
+                var index = 0;
+                $(".typed-cursor").show();
+
+                //2.利用定时器，每次往字符串中添加一个内容，索引值自增，设置给word盒子；
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    //每次往字符串中添加一个内容，索引值自增，设置给word盒子；
+                    newStr += str[index];//str.charAt(index);
+                    index++;
+                    $(".word").text(newStr)
+                    //3.判断没有内容了就清除定时器；隐藏插入条光标；
+                    if(str === newStr){
+                        clearInterval(timer);
+                        $(".typed-cursor").hide();
+                    }
+                },200);
+            }
+
+
+        })
+    </script>
+</head>
+
+<body>
+
+
+    <div class="wrap">
+        <h1>
+            You want to say ：
+            <span class="word"></span>
+            <span class="typed-cursor">|</span>
+            ！
+        </h1>
+
+        <div class="saySection">
+            <input type="text" id="inValue" class="txtSay"/>
+            <input type="button" value="Say" id="btnSay" class="btnSay"/>
+        </div>
+    </div>
+
+
+</body>
+</html>

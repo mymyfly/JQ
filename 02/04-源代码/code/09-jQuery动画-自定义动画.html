@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin: 20px;
+            margin-left: 0;
+        }
+        div {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //自定义动画；（类比缓动框架）
+            $("button").click(function () {
+                //四个参数；
+                //第一个参数：目标位置；
+                var json = {"width":100,"height":100,left: 500,top: 100};
+                //第二个参数：时间；
+                var time = 3000;
+                //第三个参数：运送类型；
+                    //Speed: swing;缓动。先快在慢。默认
+                    //Speed: linear;匀速。
+                var speed = "linear";
+                //第四个参数：回掉函数
+
+                $("div").animate({"width":100,"height":100,left: 500,top: 100},3000,"linear", function () {
+                    alert(1);
+                });
+
+                //拓展
+                //上面的几个动画都可以用自定义动画模仿；
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button>动起来</button>
+
+<div>
+    临千仞之溪，<br>
+    非才长也，位高也...
+</div>
+
+
+
+
+</body>
+</html>

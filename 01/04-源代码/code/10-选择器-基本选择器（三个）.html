@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            margin: 3px;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(function () {
+            //基本选择器
+                //方法： jQ对象.css(属性，值);//style中的样式属性
+
+
+            //标签名
+            $("li").css("background","pink");
+
+            //#id
+            $("#box").css("background","skyblue");
+
+            //.className
+            $(".box").css("background","lightgreen");
+
+
+            //拓展两个；
+//            console.log($("*"));
+//            console.log($(".box,#box"));
+
+
+        });
+    </script>
+</head>
+<body>
+
+<ul>
+    <li></li>
+    <li class="box"></li>
+    <li id="box"></li>
+    <li class="box"></li>
+    <li></li>
+</ul>
+
+
+</body>
+</html>

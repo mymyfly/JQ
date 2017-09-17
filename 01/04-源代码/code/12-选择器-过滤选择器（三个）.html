@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            font: 500 20px/34px simsun;
+            margin: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //筛选选择器(3个)
+
+            //:even  偶数位索引值的元素，奇数位的真是元素；
+            $("li:even").css("background","skyblue");
+            //:odd  奇数位索引值的元素，偶数位的真是元素；
+            $("li:odd").css("background","lightgreen");
+
+            //第一个和最后一个
+            // $("li:eq(0)").css("background","pink");
+            // $("li:eq(11)").css("background","pink");
+
+        });
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+    </ul>
+
+
+
+
+
+
+</body>
+</html>

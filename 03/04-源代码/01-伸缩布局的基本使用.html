@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        ul {
+            list-style: none;
+            width: 600px;
+            height: 600px;
+            margin: 50px auto;
+            border: 1px solid black;
+            padding: 0;
+
+            /*display:flex 写在哪个元素里，那么就代表是这个元素的子元素用这种布局来管理*/
+            display: flex;
+            /*
+             设置主轴的属性
+                row  ：水平方向为主轴（默认值）
+                column：垂直方向为主轴
+                row-reverse：(了解)设置水平方向为主轴，并且起始和结束的位置对调
+                column-reverse:(了解)设置垂直放心为主轴，并且起始和结束的位置对调
+            */
+            /*flex-direction: column;*/
+            /*在主轴方向怎么排列的属性
+                flex-start：从主轴最开始的地方进行排列
+                flex-end：从主轴结束的位置开始排列
+                center：在主轴的中间
+                space-around:元素与元素之间的间距相等，起始元素和结束元素距离父容器会有一段间距.左右跟父元素的间距是元素之间间距的一半
+                space-between:元素与元素之间的间距相等，起始元素和结束元素距离父容器没有间距,但是如果元素自身有margin，margin会生效
+            */
+            justify-content: space-around;
+
+            /*统一设置所有元素在副轴上的位置*/
+            align-items: center;
+
+            /*了解即可，此时没用,要多行的时候才有用,设置如果有多行时的多行排列效果*/
+            align-content: space-between;
+            /*伸缩布局默认情况下，不允许多行，在这种情况下即使超出，也放在一行里挤着*/
+            flex-wrap: wrap;
+        }
+
+
+
+        li {
+
+            width: 300px;
+            height: 100px;
+            background-color: yellowgreen;
+            /*margin: 10px;*/
+        }
+        /*
+        li:nth-child(1) {
+
+            align-self: flex-start;
+        }
+
+        li:nth-child(3) {
+
+            align-self: flex-end;
+        }
+     */
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>

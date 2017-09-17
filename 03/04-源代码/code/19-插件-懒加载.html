@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            height: 5000px;
+        }
+    </style>
+    <!--先引jquery在引插件-->
+    <script src="jquery-1.11.1.js"></script>
+    <script src="jquery.lazyload.js"></script>
+    <script>
+        $(function () {
+
+            //调用
+            $("img.lazy").lazyload();
+        });
+    </script>
+</head>
+<body>
+
+
+    <div></div>
+
+    <!--图片不要写src-->
+    <img class="lazy" data-original="images/top.png" width="640" height="480">
+
+
+</body>
+</html>

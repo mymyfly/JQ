@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin: 20px;
+            margin-left: 0;
+        }
+        div {
+            /*display: none;*/
+            width: 300px;
+            height: 300px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 28px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //显示和隐藏动画；
+
+            //显示：show();参数不同功能不能；(四种)
+            $("button").eq(0).click(function () {
+                //第一种：无参；显示动画；(display: block);
+//                $("div").show();
+
+                //第二种：1个参数(毫秒值)；显示动画；
+                // (display: block；overflow:hidden;width;height;padding;margin;opacity);
+                $("div").show(1000);
+
+                //第三种：1个参数(字符串)；显示动画；
+                // (display: block；overflow:hidden;width;height;padding;margin;opacity);
+                    /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").show("normal");
+
+                //第四种：2个参数(毫秒值，回调函数)；显示动画；
+                // (display: block；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").show(3000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+
+
+            //隐藏：hide();参数不同功能不能；(四种)
+            $("button").eq(1).click(function () {
+                //第一种：无参；隐藏动画；(display: none);
+//                $("div").hide();
+
+                //第二种：1个参数(毫秒值)；隐藏动画；
+                // (display: none；overflow:hidden;width;height;padding;margin;opacity);
+                $("div").hide(1000);
+
+                //第三种：1个参数(字符串)；隐藏动画；
+                // (display: none；overflow:hidden;width;height;padding;margin;opacity);
+                /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").hide("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；隐藏动画；
+                // (display: none；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").hide(3000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+
+
+            //切换：toggle();参数不同功能不能；(四种)
+            $("button").eq(2).click(function () {
+                //第一种：无参；切换动画；(display: none/block);
+                $("div").toggle();
+
+                //第二种：1个参数(毫秒值)；切换动画；
+                // (display: none/block；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").toggle(1000);
+
+                //第三种：1个参数(字符串)；切换动画；
+                // (display: none/block；overflow:hidden;width;height;padding;margin;opacity);
+                /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").toggle("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；切换动画；
+                // (display: none/block；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").toggle(1000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div>
+    临千仞之溪，<br>
+    非才长也，位高也...
+</div>
+
+
+
+
+</body>
+</html>

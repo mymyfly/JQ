@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin: 20px;
+            margin-left: 0;
+        }
+        div {
+            /*display: none;*/
+            width: 300px;
+            height: 300px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 28px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //淡入和淡出动画；（类比卷帘门）
+                //和滑入滑出唯一区别在于多一个方法，fadeTo();
+
+
+            //淡入：fadeIn();参数不同功能不能；(四种)
+            $("button").eq(0).click(function () {
+                //第一种：无参；淡入动画；(正常时间淡入);
+                //(display: block；opacity);
+                $("div").fadeIn();
+
+                //第二种：1个参数(毫秒值)；指定时间淡入；
+                // (display: block；opacity);
+//                $("div").fadeIn(2000);
+
+                //第三种：1个参数(字符串)；指定时间淡入；
+                // (display: block；opacity);
+                    /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").fadeIn("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；指定时间淡入；
+                // (display: block；opacity);
+//                $("div").fadeIn(1000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+
+
+            //淡出：fadeOut();参数不同功能不能；(四种)
+            $("button").eq(1).click(function () {
+                //第一种：无参；淡出动画；(正常时间淡出);
+                //(display: none；opacity);
+                $("div").fadeOut();
+
+                //第二种：1个参数(毫秒值)；指定时间淡出；
+                //(display: none；opacity);
+//                $("div").fadeOut(1000);
+
+                //第三种：1个参数(字符串)；指定时间淡出；
+                //(display: none；opacity);
+                /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").fadeOut("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；指定时间淡出；
+                //(display: none；opacity);
+//                $("div").fadeOut(3000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+
+
+            //切换：fadeToggle();参数不同功能不能；(四种)
+            $("button").eq(2).click(function () {
+                //第一种：无参；指定时间切换动画；
+                //(display: none/block；opacity);
+                $("div").fadeToggle();
+
+                //第二种：1个参数(毫秒值)；指定时间指定时间切换动画；
+                // (display: none/block；opacity);
+//                $("div").fadeToggle(1000);
+
+                //第三种：1个参数(字符串)；指定时间切换动画；
+                // (display: none/block；opacity);
+                /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").fadeToggle("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；指定时间切换动画；
+                // (display: none/block；opacity);
+//                $("div").fadeToggle(1000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+
+
+            //切换：fadeTo();参数不同功能不能；(四种)
+            $("button").eq(3).click(function () {
+
+                //第一种：2个参数(毫秒值)；指定时间指定时间切换动画；
+                // (display: block；opacity);
+                $("div").fadeTo(1000,0.4);
+
+                //第二种：2个参数(毫秒值，回调函数)；指定时间切换动画；
+                // (display: none/block；opacity);
+//                $("div").fadeTo(1000, 0.1,function () {
+//                    alert("完成");
+//                });
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button>淡入</button>
+<button>淡出</button>
+<button>切换</button>
+<button>淡入程度</button>
+<div>
+    临千仞之溪，<br>
+    非才长也，位高也...
+</div>
+
+
+
+
+</body>
+</html>

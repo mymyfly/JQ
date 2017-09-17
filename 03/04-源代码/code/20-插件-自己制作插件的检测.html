@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 20px;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script src="jquery-mrlv-min.js"></script>
+    <script>
+        $(function () {
+            //需求1：自制插件，改变所有按钮的文字颜色；
+            //需求2：自制插件，改变被点击按钮的文字颜色；
+
+            //需求1：自制插件，改变所有按钮的文字颜色；
+            $("button").click(function () {
+                $("button").changeColorBlue();
+
+                //需求2：自制插件，改变被点击按钮的文字颜色；
+                $.changeColorRed($(this));
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+
+</body>
+</html>

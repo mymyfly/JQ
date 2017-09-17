@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-1.11.1.js"></script>
+    <style>
+        div {
+            display: none;
+        }
+    </style>
+    <script>
+        $(window).ready(function () {
+            //jQuery对象和DOM对象的转换
+                //1.DOM对象转换成jQuery对象（1种）
+                //2.jQuery对象转换成DOM对象（2种）
+
+            //1.DOM对象转换成jQuery对象（1种）
+                //$(DOM对象)；
+
+            var box = document.getElementById("box");
+            var jQBox = $(box);
+//            box.show();//DOM对象没有show()，报错；
+            jQBox.show();//用了jquery方法；
+
+            //2.jQuery对象转换成DOM对象（2种）利用索引值；
+                //(1).jQuery对象[索引值]；有点儿像数组；
+                //(2).jQuery对象.get(索引值);
+
+            //(1).jQuery对象[索引值]；有点儿像数组；
+            var jQDiv = $("div");
+//            jQDiv.style.display = "block";//jQuery对象没有DOM对象的属性和方法；
+            jQDiv[0].style.display = "block";//转换成DOM对象；(从jQuery对象中取出来)
+
+            //(2).jQuery对象.get(索引值);
+            jQDiv.get(4).style.display = "block";
+        });
+    </script>
+</head>
+<body>
+
+    <div>1</div>
+    <div class="box">2</div>
+    <div id="box">3</div>
+    <div class="box">4</div>
+    <div>5</div>
+
+
+</body>
+</html>

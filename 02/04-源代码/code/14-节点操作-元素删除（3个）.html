@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //jQuery方法清空元素2种
+            //jQuery方法删除元素1种
+
+            $("button").click(function () {
+                //jQuery方法清空元素2种
+//                $("ul").html("");//知道
+//                $("ul").empty();//推荐；比较彻底；
+
+                //jQuery方法删除元素1种
+                $("#li2").remove();
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<button>生成</button>
+<ul>
+    <li>我是原生土著li1</li>
+    <li id="li2">我是原生土著li2</li>
+    <li>我是原生土著li3</li>
+</ul>
+
+
+</body>
+</html>

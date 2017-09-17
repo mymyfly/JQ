@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            font: 500 22px/38px "simsun";
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        //入口函数
+        $(window).ready(function () {
+            //获取li，然后通过for循环上色；
+            var jqLi = $("li");
+            console.log(jqLi);
+            //在利用for循环上色；
+            for(var i=0;i<jqLi.length;i++){
+                //判断
+                if(i%2 === 0){
+                    //偶数位的索引值，奇数行
+                    jqLi[i].style.background = "red";
+                }else{
+                    //奇数位的索引值，偶数行
+                    jqLi[i].style.background = "yellow";
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+    </ul>
+
+</body>
+</html>

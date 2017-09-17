@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin: 20px;
+            margin-left: 0;
+        }
+        div {
+            /*display: none;*/
+            width: 300px;
+            height: 300px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 28px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //滑入和滑出动画；（类比卷帘门）
+                //和显示隐藏动画唯一区别就在于有词缀；
+
+
+            //滑入：slideDown();参数不同功能不能；(四种)
+            $("button").eq(0).click(function () {
+                //第一种：无参；滑入动画；(正常时间滑入);
+                //(display: block；overflow:hidden;width;height;padding;margin);
+                $("div").slideDown();
+
+                //第二种：1个参数(毫秒值)；指定时间滑入；
+                // (display: block；overflow:hidden;width;height;padding;margin);
+//                $("div").slideDown(1000);
+
+                //第三种：1个参数(字符串)；指定时间滑入；
+                // (display: block；overflow:hidden;width;height;padding;margin);
+                    /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").slideDown("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；指定时间滑入；
+                // (display: block；overflow:hidden;width;height;padding;margin);
+//                $("div").slideDown(3000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+
+
+            //滑出：slideUp();参数不同功能不能；(四种)
+            $("button").eq(1).click(function () {
+                //第一种：无参；滑出动画；(正常时间滑出);
+                //(display: block；overflow:hidden;width;height;padding;margin);
+                $("div").slideUp();
+
+                //第二种：1个参数(毫秒值)；指定时间滑出；
+                // (display: none；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").slideUp(1000);
+
+                //第三种：1个参数(字符串)；指定时间滑出；
+                // (display: none；overflow:hidden;width;height;padding;margin;opacity);
+                /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").slideUp("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；指定时间滑出；
+                // (display: none；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").slideUp(3000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+
+
+            //切换：slideToggle();参数不同功能不能；(四种)
+            $("button").eq(2).click(function () {
+                //第一种：无参；指定时间切换动画；
+                //(display: block；overflow:hidden;width;height;padding;margin);
+                $("div").slideToggle();
+
+                //第二种：1个参数(毫秒值)；指定时间指定时间切换动画；
+                // (display: none/block；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").slideToggle(1000);
+
+                //第三种：1个参数(字符串)；指定时间切换动画；
+                // (display: none/block；overflow:hidden;width;height;padding;margin;opacity);
+                /* slow：600ms、normal：400ms、fast：200ms */
+//                $("div").slideToggle("fast");
+
+                //第四种：2个参数(毫秒值，回调函数)；指定时间切换动画；
+                // (display: none/block；overflow:hidden;width;height;padding;margin;opacity);
+//                $("div").slideToggle(1000, function () {
+//                    alert("完成");
+//                });
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<button>滑入</button>
+<button>滑出</button>
+<button>切换</button>
+<div>
+    临千仞之溪，<br>
+    非才长也，位高也...
+</div>
+
+
+
+
+</body>
+</html>

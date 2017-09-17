@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            /*display: none;*/
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+
+            $(document).on("click", function () {
+                //连式编程和隐式迭代
+
+                //1.连式编程:以为每个方法底层都有一个return this；
+//                $("li").show(1000).css("background","red").css("line-height","30px").slideUp().fadeIn(2000);
+
+                //2.隐式迭代：底层隐藏了一个for循环；
+
+                //3.参数不同，功能不同；
+
+
+                //end();往回挑一格；
+                console.log($("li").eq(0).next("li").next("li").next("li").next("li").end().end());
+
+
+
+
+                //不是寻找其他的节点的全部返回this；
+//                function show(){
+//                    return this;
+//                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+    <ul>
+        <li class="box1">1</li>
+        <li class="box2">2</li>
+        <li class="box3">3</li>
+        <li class="box4">4</li>
+        <li class="box5">5</li>
+    </ul>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 5000px;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            padding: 100px;
+            margin: 50px;
+            position: relative;
+            background-color: deepskyblue;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            /*position: absolute;*/
+            /*top: 10px;*/
+            /*left: 10px;*/
+            background-color: lightgreen;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //1.offset();获取或设置元素相对于文档的位置（返回值是一个json;{left:100,top:100}）
+                //盒子距离整个页面的坐标；
+            $("button").eq(0).click(function () {
+                //无参获取值；
+                console.log($(".box1").offset());//和定位无关；
+                console.log($(".box2").offset());//和定位无关；
+                console.log($(".box2").offset().top);//和定位无关；
+                console.log($(".box2").offset().left);//和定位无关；
+            });
+
+            $("button").eq(1).click(function () {
+                //带参赋值；  计算好了，给盒子加定位进行赋值；
+                    //如果盒子没有定位，加relative；
+                $(".box2").offset({top: 160,left: 168});
+            });
+
+
+            //2.position();获取相对于其最近的具有定位的父元素的位置。
+                //类似offsetLeft/Top;
+                //以盒子的外maring为准；(就是求left和top的值)（css();获取有px；）
+            $("button").eq(2).click(function () {
+                //无参获取值；
+                console.log($(".box1").position());//和定位无关；
+                console.log($(".box2").position());//和定位无关；
+            });
+
+            $("button").eq(3).click(function () {
+                //position()无法复制；
+                alert(1);
+                $(".box2").position({top: 160,left: 168});
+            });
+
+
+
+            //3.scrollTop();获取页面被卷去的头部；赋值是让页面进行跳转；
+            $("button").eq(4).click(function () {
+                //获取页面被卷去的头部
+                    //window   document   body;
+                    /*头2个是页面被卷入的高度,第3个是可视区域的高度,最后一个是整个页面的高度*/
+                console.log($(document).scrollTop());
+                console.log($(window).scrollTop());
+                console.log($(window).height());
+                console.log($(document).height());
+            });
+
+            $("button").eq(5).click(function () {
+                //让页面跳转
+                $(document).scrollTop(150);
+            });
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+        <button>offset()获取值</button>
+        <button>offset()设置值</button>
+        <button>position()获取值</button>
+        <button>position()设置值</button>
+        <button>scrollTop()获取值</button>
+        <button>scrollTop()设置值</button>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(window).ready(function () {
+            //jQuery对类的操作有4种；
+            $(document).click(function () {
+                //1.类的添加；addClass();
+                $("ul>li").addClass("aaa");//如果有类名，在原有基础上再添加一个；
+
+                //2.类的删除；removeClass();
+                $("ul>li").removeClass("aaa");//没有不删除，不报错；
+
+                //3.判断类；hasClass()
+                alert($("ul>li").hasClass("bbb"));//判断标签中有没有某个类；
+                    //有一个有的就是true；全部没有才是false；
+
+                //切换类：toggleClass();
+                $("ul>li").toggleClass("ccc");
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li class="bbb"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

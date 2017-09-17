@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //jQuery方法添加元素(jQuery对象)
+                //6个方法
+
+            $("button").click(function () {
+                //每次点击生成一个标签
+                var h3 = $("<h3>我是html()创建的h3标签</h3>");
+
+                //1.jq父节点.append(jq新节点);          在jq父节点的最末尾添加一个元素；
+//                $("ul").append(h3);
+
+                //2.jq新节点.appendTo(jq父节点);        在jq父节点的最末尾添加一个元素；
+//                h3.appendTo($("ul"));
+
+                //3.jq父节点.prepend(jq新节点);         在jq父节点的最前面添加一个元素；
+//                $("ul").prepend(h3);
+
+                //4.jq新节点.prependTo(jq父节点);       在jq父节点的最前面添加一个元素；
+//                h3.prependTo($("ul"));
+
+
+                //5.jq兄弟.before(jq新节点);            在某个节点之前添加jq新节点；
+//                $("#li2").before(h3);
+
+                //6.jq兄弟.after(jq新节点);            在某个节点之后添加jq新节点；
+               $("#li2").after(h3);
+
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<button>生成</button>
+<ul>
+    <li>我是原生土著li1</li>
+    <li id="li2">我是原生土著li2</li>
+    <li>我是原生土著li3</li>
+</ul>
+
+
+</body>
+</html>

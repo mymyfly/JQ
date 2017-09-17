@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>五角星评分案例</title>
+    <style>
+        .comment {
+            font-size: 40px;
+            color: red;
+        }
+
+        .comment li {
+            float: left;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(function () {
+            //需求1：鼠标放到哪个li，当前的和之前的全部变成实心，其他的是空心；
+            //需求2：鼠标移开li，以某个参考li为准，之前的为空之后的为实心，当前的也是实心；
+            //需求3：鼠标点击哪个li，就以这个li为参考li，默认没有参考li；
+
+
+            //需求1：鼠标放到哪个li，当前的和之前的全部变成实心，其他的是空心；
+            var SX_WJX = "★";
+            var KX_WJX = "☆";
+            $("li").on("mouseenter", function () {
+                //当前的和之前的全部变成实心，其他的是空心
+                $(this).text(SX_WJX).prevAll("li").text(SX_WJX).end().nextAll("li").text(KX_WJX);
+            })
+
+            //需求2：鼠标移开li，以某个参考li为准，之前的为空之后的为实心，当前的也是实心；
+            $("li").on("mouseleave", function () {
+                //当前的和之前的全部变成实心，其他的是空心
+                //判断：没有类名current全部设置为空心，有要特殊处理
+                if($("li.current").length === 0){
+                    $("li").text(KX_WJX);
+                }else{
+                    //以某个参考li为准，之前的为空之后的为实心，当前的也是实心；
+                    $(".current").text(SX_WJX).prevAll("li").text(SX_WJX).end().nextAll("li").text(KX_WJX);
+                }
+            })
+
+            //需求3：鼠标点击哪个li，就以这个li为参考li，默认没有参考li；
+            $("li").on("click", function () {
+                //当前的和之前的全部变成实心，其他的是空心
+                $(this).addClass("current").siblings("li").removeClass("current");
+            })
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <ul class="comment">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+
+
+</body>
+</html>

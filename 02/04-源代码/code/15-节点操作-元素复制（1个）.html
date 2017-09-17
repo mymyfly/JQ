@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <style>
+        li {
+            line-height: 30px;
+            background-color: skyblue;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            //jQuery方法复制元素
+
+            $("button").click(function () {
+                //clone();
+                    //永远都是深层复制；参数可以选择是否复制事件；
+                var newLi = $("#li2").clone(true);
+                newLi.css("background-color","lightgreen");
+                $("ul").append(newLi);
+            });
+
+
+            $("li").click(function () {
+                alert(3333);
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<button>生成</button>
+<ul>
+    <li>我是原生土著li1</li>
+    <li id="li2">我是原生土著li2</li>
+    <li>我是原生土著li3</li>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            document.onclick = function () {
+                //1.让input获取插入条光标
+                    //focus();
+               document.getElementsByTagName("input")[0].focus();
+
+                //2.让input里面的内容被选中
+                    //select();
+                document.getElementsByTagName("input")[0].select();
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+
+    <input type="text"/>
+
+
+</body>
+</html>

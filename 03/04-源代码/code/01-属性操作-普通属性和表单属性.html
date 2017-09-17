@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+
+            $("button").click(function () {
+                //attr();设置或者获取元素的属性值；
+                    //一个参数是获取，两个参数是设置；
+//                console.log($("#box").attr("id"));//和原生js中的getAttibute();
+//                console.log($("#box").attr("title"));//和原生js中的getAttibute();
+
+//                $("#box").attr("title","box");//和原生js中的setAttibute();
+//                $("#box").attr("aaa","aaa");//和原生js中的setAttibute();
+
+//                $("#box").bbb = 111;
+//                console.log($("#box").bbb);//jquery不支持直接定义属性；
+
+
+                //removeAttr();删除属性值；
+//                $("#box").removeAttr("class","bbb");//不能只删除一部分;必须全部删除;
+//                $("#box").removeAttr("class");
+
+
+
+                //prop();操作表单属性;
+//                alert($("input").attr("checked"));//永远都是undefined;
+
+//                alert($("input").prop("checked"));//获取和设置表单属性;
+                        //removeProp();几乎不用;因为直接设置false就可以了
+
+                //设置表单属性
+               $("input").prop("checked",true);
+
+
+
+
+                //总结:
+                    //1.普通属性: attr();removeAttr();
+                    //2.表单属性: prop(); 设置为false,就是取消选中状态;
+                    //3.样式属性: add/rmeove/toggle/hasClass();   css();
+                    //4.特殊属性: val();html();text();   方便开发
+
+
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<button>设置内容</button>
+
+<div id="box" class="aaa bbb ccc" title="我是title">我是div</div>
+
+<input type="checkbox"/>
+
+
+</body>
+</html>

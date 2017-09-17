@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            font: 500 20px/34px simsun;
+            margin: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //筛选选择器；
+
+            //1.find();子子孙孙中的指定元素；
+//            $("ul").find("li").css("background","skyblue");
+//            $("ul").find().css("background","skyblue");//不写参数无法获取任何内容；
+
+
+            //2.children();找亲儿子元素；
+//            $("ul").children("li").css("background","skyblue");
+//            $("ul").children().css("background","skyblue");//什么都不写，所有子元素；
+
+
+            //3.eq();根据索引值找对象；
+//            $("ul>li").eq(0).css("background","skyblue");
+//            $("ul>li").eq($("ul>li").length-1).css("background","skyblue");
+
+
+            //4.parent();只找父盒子；
+//            console.log($("ul").parent("body"));
+
+
+            //5.siblings(); 所有兄弟节点；不包括自己；
+//            $("ul>li").eq(2).siblings("li").css("background","skyblue");
+//            $("ul>li").eq(2).siblings().css("background","skyblue");//不写参数，获取所有
+
+
+
+
+            //拓展
+//            next();下一个兄弟节点；
+//            prev();上一个兄弟节点；
+//            nextAll();之后所有兄弟节点；
+//            prevAll();之前所有兄弟节点；
+
+
+        });
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <span>我是span</span>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <span>我是span</span>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <span>我是span</span>
+        <li>我是ul中的子标签li</li>
+
+        <ol>
+            <li>我是ol中的子标签li</li>
+            <li>我是ol中的子标签li</li>
+            <span>我是span</span>
+            <li>我是ol中的子标签li</li>
+            <li>我是ol中的子标签li</li>
+            <span>我是span</span>
+            <li>我是ol中的子标签li</li>
+        </ol>
+    </ul>
+
+
+
+
+
+
+</body>
+</html>

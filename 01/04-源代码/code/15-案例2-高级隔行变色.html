@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            cursor: pointer;
+            font: 500 22px/38px "simsun";
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(window).ready(function () {
+            //隔行变色；
+            $("#box>li:odd").css("background","skyblue");
+            $("#box>li:even").css("background","lightgreen");
+
+            //鼠标进入高亮显示
+            $("li").mouseenter(function () {
+                //每次进入，设置一次；
+                $("#box>li:odd").css("background","skyblue");
+                $("#box>li:even").css("background","lightgreen");
+                //当前变色
+                $(this).css("background","red");
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+    <ul id="box">
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+        <li>今天攀攀老师，老漂亮了，嗷嗷漂亮.......</li>
+    </ul>
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //原生js中的value和innerText和innerHTML属性
+            //jQuery中的val(); text();    html();
+
+            $("button").click(function () {
+                //val(); input的value属性；
+//                alert($("input").val());        //无参获取值；
+//                $("input").val("我是设置的内容");//带参设置值；
+
+
+                //text(); 双闭合标签内部的内容(innerText属性)；不识别标签
+//                alert($("div").text());                  //无参获取值；（无法获取标签）
+//                $("div").text("<li>我是新内容</li>");     //带参设置值；（无法识别标签）
+
+
+                //html(); 双闭合标签内部的内容(innerTHML属性)；识别标签
+//                alert($("div").html());                  //无参获取值；（可以获取标签）
+//                $("div").html("<li>我是新内容</li>");     //带参设置值；（可以识别标签）
+
+
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button>设置内容</button><br><br>
+
+<input type="text"/>
+<br><br>
+<div id="box" class="aaa bbb ccc" title="我是title">
+    <i>我是div的内容</i>
+</div>
+
+
+
+</body>
+</html>

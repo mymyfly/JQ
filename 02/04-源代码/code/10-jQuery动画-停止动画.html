@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            margin: 20px;
+            margin-left: 0;
+        }
+        div {
+            /*display: none;*/
+            width: 300px;
+            height: 300px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 28px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //让盒子动
+            $("button:eq(0)").click(function () {
+                //第一种：无参；指定时间切换动画；
+                $("div").slideToggle(10000);
+            });
+
+            //让动画停止
+            $("button:eq(1)").click(function () {
+                //停止动画：里面有两个参数
+//                $("div").stop();//默认两个都是false；(因为实际开发用的比较多)
+
+
+                // 第一个参数表示后续动画是否要取消
+//                （true:后续动画不执行;        false:后续动画会执行）
+                // 第二个参数表示当前动画是否立即执行完毕
+//                （true:立即执行完成当前动画;  false:立即停止当前动画）
+
+                //true,true;后续动画不执行,立即执行完成当前动画;
+//                $("div").stop(true,true);
+                //true,false;后续动画不执行,立即停止当前动画;
+//                $("div").stop(true,false);
+                //false,true;后续动画会执行,立即执行完成当前动画;
+//                $("div").stop(false,true);
+                //false,false;后续动画会执行,立即停止当前动画;
+//                $("div").stop(false,false);
+
+
+                //stop()用法：调用动画之前先调用stop();
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button>动起来</button>
+<button>停止</button>
+<div>
+    临千仞之溪，<br>
+    非才长也，位高也...
+</div>
+
+
+
+
+</body>
+</html>

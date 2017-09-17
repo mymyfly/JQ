@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(window).ready(function () {
+            //jQuery对象和DOM对象区别就在一层皮；
+                //包含和被包含；
+
+            //jQuery方法获取的是jQuery对象，里面有jQuery自己的属性和方法；(DOM对象)
+            //原生js方法获取DOM对象，里面的属性和方法都是原生DOM对象；
+                //谁的属性方法谁调用，不能混淆；
+
+
+//            console.log(document.getElementById("box"));
+//            console.log($("#box"));
+
+//            console.log(document.getElementsByClassName("box"));
+//            console.log($(".box"));
+
+        });
+    </script>
+</head>
+<body>
+
+    <div>1</div>
+    <div class="box">2</div>
+    <div id="box">3</div>
+    <div class="box">4</div>
+    <div>5</div>
+
+
+</body>
+</html>

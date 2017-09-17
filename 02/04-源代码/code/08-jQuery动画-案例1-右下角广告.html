@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .ad {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 230px;
+            height: 120px;
+            background-image: url(images/ad.jpg);
+            display: none;
+        }
+
+        .ad span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 18px;
+            background-image: url(images/h.jpg);
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //需求1：页面加载的时候，让div先滑入，在画出，在淡入；
+            //需求2：点击span让div淡出；
+
+            //需求1：页面加载的时候，让div先滑入，在画出，在淡入；
+            $("div").slideDown(1000).fadeIn();
+            //需求2：点击span让div淡出；
+            $("span").click(function () {
+                $("div").hide();
+            });
+
+            //拓展；
+//            $("div").slideDown().slideUp().fadeIn().children("span").click(function () {
+//                $("div").hide();
+//            });
+        });
+    </script>
+</head>
+<body>
+
+
+    <div class="ad">
+        <span></span>
+    </div>
+
+
+</body>
+</html>

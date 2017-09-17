@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            font: 500 20px/34px simsun;
+            margin: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //层级选择器，两种
+                //1.空格；  后代选择器；子子孙孙；
+                //2. >  ；  子代选择器；只要亲儿子；
+
+
+            //1.空格；  后代选择器；子子孙孙；
+            $("ul li").css("background","skyblue");
+
+            //2. >  ；  子代选择器；只要亲儿子；
+            $("ul>li").css("background","lightgreen");
+
+
+        });
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <span>我是span</span>
+        <li>我是ul中的子标签li</li>
+        <span>我是span</span>
+        <li>我是ul中的子标签li</li>
+        <li>我是ul中的子标签li</li>
+        <ol>
+            <li>我是ol中的子标签li</li>
+            <li>我是ol中的子标签li</li>
+            <span>我是span</span>
+            <li>我是ol中的子标签li</li>
+            <li>我是ol中的子标签li</li>
+            <span>我是span</span>
+            <li>我是ol中的子标签li</li>
+        </ol>
+    </ul>
+
+
+
+
+
+
+</body>
+</html>

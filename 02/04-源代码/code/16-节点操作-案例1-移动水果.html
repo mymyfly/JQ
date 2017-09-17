@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        select {
+            width: 200px;
+            height: 300px;
+            font-size: 20px;
+            background-color: #5cff5a;
+        }
+    </style>
+
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            //需求1：点击前两个按钮，把一侧的所有子元素移动到另一侧；
+            //需求2：点击后两个按钮，把一侧的所有子元素中被选中的移动到另一侧；
+
+
+            //需求1：点击前两个按钮，把一侧的所有子元素移动到另一侧；
+            $("button").eq(0).click(function () {
+                //jQuery中的append();都可以一把一把的操作；
+                $("#sel2").append($("#sel1>option"));
+            });
+            $("button").eq(1).click(function () {
+                //jQuery中的append();都可以一把一把的操作；
+                $("#sel1").append($("#sel2>option"));
+            });
+
+            //需求2：点击后两个按钮，把一侧的所有子元素中被选中的移动到另一侧；
+            $("button").eq(2).click(function () {
+                //jQuery中的append();都可以一把一把的操作；
+                $("#sel2").append($("#sel1>option:selected"));
+            });
+            $("button").eq(3).click(function () {
+                //jQuery中的append();都可以一把一把的操作；
+                $("#sel1").append($("#sel2>option:selected"));
+            });
+
+
+            //拓展：
+//            function fn(index,str1,str2){
+//                $("button").eq(index).click(function () {
+//                    $(str1).append($(str2));
+//                });
+//            }
+
+        });
+    </script>
+</head>
+<body>
+
+    <select name="" id="sel1" size=2 multiple>
+        <option value="">香蕉</option>
+        <option value="">大鸭梨</option>
+        <option value="">苹果</option>
+        <option value="">大西瓜</option>
+    </select>
+
+    <button>>>></button>
+    <button><<<</button>
+    <button>></button>
+    <button><</button>
+
+    <select name="" id="sel2" size="2" multiple>
+
+    </select>
+
+</body>
+</html>

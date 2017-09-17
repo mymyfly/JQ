@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            display: none;
+            height: 120px;
+            background-color: pink;
+            margin: 10px;
+            text-align: center;
+            font: 700 30px/100px "simsun";
+        }
+    </style>
+
+    <!--1.引包-->
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        //2.入口函数;  window.onload
+        $(function () {
+            //3，绑定事件以函数形式存在
+            $("button").click(function () {
+                $(".box").show().html("银钱双戟丧尽古今人品，穷之一穴埋没多少英雄....");//连式编程；像锁链一样，一直调用方法；
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <button>显示盒子设置内容</button>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+</body>
+</html>

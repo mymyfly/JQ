@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(window).ready(function () {
+            //css();参数不同，功能不同；全部都是操作元素样式的；
+            $(document).click(function () {
+                //1.一个参数：获取值(不分哪个位置，最高权限的属性值)（类似于getStyle()）
+//                console.log($("div").css("width"));//带单位
+//                console.log($("div").css("height"));//带单位
+               console.log($("div").css("background-color"));//带单位
+
+
+                //2.两个参数；设置属性值
+//                $("div").css("width",222);//不带代为可以
+//                $("div").css("height","222px");//带代为可以
+
+
+                //3.一个参数json;  也是赋值；
+//                var json = {"width":1000,height:200,"background-color":"lightgreen"};
+//                $("div").css(json);
+                    $("div").css({"width":"1000px","height":"200px","background-color":"lightgreen"});
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div style="width: 111px;"></div>
+
+
+</body>
+</html>
